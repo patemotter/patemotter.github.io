@@ -1,0 +1,328 @@
+/* ------------- DESIGN TOKENS ------------- */
+:root {
+    --bg-color: #0d1117;
+    --surface-color: #161b22;
+    --border-color: #30363d;
+    
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-color: #58a6ff;
+    --accent-hover: #79c0ff;
+    
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* ------------- RESET & BASE ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+}
+
+body {
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 4rem 0;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-family: var(--font-mono);
+}
+
+.section-title::before {
+    content: "## ";
+    color: var(--border-color);
+}
+
+/* ------------- NAVIGATION ------------- */
+.site-nav {
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.logo::before {
+    content: "~/ ";
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.highlight-link {
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    color: var(--text-primary);
+}
+
+.highlight-link:hover {
+    border-color: var(--text-secondary);
+    text-decoration: none;
+}
+
+/* ------------- BUTTONS ------------- */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
+
+.btn-primary {
+    background-color: var(--surface-color);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* ------------- HERO SECTION ------------- */
+.hero {
+    padding: 6rem 0 2rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.prompt {
+    color: var(--accent-color);
+    font-family: var(--font-mono);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* ------------- ABOUT SECTION ------------- */
+.about-content {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.about-text {
+    margin-bottom: 1rem;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ------------- PROJECTS SECTION ------------- */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.project-title a {
+    color: var(--text-primary);
+}
+
+.project-title a:hover {
+    color: var(--accent-color);
+}
+
+.project-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+/* ------------- FOOTER ------------- */
+footer {
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+/* ------------- RESPONSIVE ------------- */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* simple fallback for mobile without js */
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+}

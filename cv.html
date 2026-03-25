@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pate Motter | Curriculum Vitae</title>
+    <meta name="description" content="Curriculum Vitae for Pate Motter - AI Performance Engineer at Google.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pate Motter | Curriculum Vitae">
+    <meta property="og:description" content="Curriculum Vitae for Pate Motter - AI Performance Engineer at Google.">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .cv-section { margin-bottom: 2.5rem; }
+        .cv-heading { font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 1.25rem; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .cv-heading::before { content: "## "; color: var(--border-color); }
+        .cv-item { margin-bottom: 1.5rem; }
+        .cv-item:last-child { margin-bottom: 0; }
+        .cv-item-header { margin-bottom: 0.4rem; display: flex; flex-direction: column; gap: 0.2rem; }
+        .cv-item-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); }
+        .cv-item-meta { font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-color); }
+        .cv-list { list-style-type: disc; margin-left: 1.5rem; }
+        .cv-list li { margin-bottom: 0.35rem; color: var(--text-secondary); line-height: 1.4; font-size: 0.95rem; padding-left: 0.25rem; }
+    </style>
+</head>
+<body>
+    <header class="site-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">patemotter</a>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Work</a>
+                <a href="index.html#resources" class="nav-link">Resources</a>
+                <a href="cv.html" class="nav-link highlight-link">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 4rem;">
+        <h1 class="hero-title" style="margin-bottom: 0.5rem;"><span class="prompt">></span> Curriculum Vitae</h1>
+        <p class="hero-subtitle">v1.2.5 - Q4 2025 | <a href="pate_motter_cv_Q4_2025.pdf" target="_blank">Download PDF</a></p>
+        
+        <hr class="section-divider">
+
+        <section class="cv-section">
+            <h2 class="cv-heading">Education</h2>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Doctor of Philosophy in Computer Science</div>
+                    <div class="cv-item-meta">Aug 2017 | University of Colorado, Boulder, CO</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Dissertation Title: Hardware Awareness for the Selection of Optimal Iterative Linear Solvers</li>
+                </ul>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Master of Science in Computer Science</div>
+                    <div class="cv-item-meta">May 2013 | University of Colorado, Boulder, CO</div>
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Bachelor of Science in Computer Science, minor in Mathematics</div>
+                    <div class="cv-item-meta">May 2011 | University of Arkansas, Fayetteville, AR</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2 class="cv-heading">Work & Research Experience</h2>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">AI Performance Engineer, TPU Inference @ Google</div>
+                    <div class="cv-item-meta">May 2023 – Present | Seattle, WA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Architected and implemented Paged Attention for MaxText from design to merge, resolving complex concurrency bugs and achieving a 47% throughput increase in microbenchmarks.</li>
+                    <li>Developed custom Pallas kernels for 2D block-wise and sub-channel quantization, enabling advanced precision support within the TPU-Inference framework.</li>
+                    <li>Built model accuracy benchmarking framework for tracking long-term improvements and regressions of TPU-Inference models.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Machine Learning Engineer, Web-based QA @ Amazon (Alexa AI)</div>
+                    <div class="cv-item-meta">Oct 2021 – May 2023 | Seattle, WA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Reduced overall latency of our model by 6x compared to the model’s baseline on GPUs.</li>
+                    <li>Responsible for performance analysis and optimization of a transformer-based research DL model.</li>
+                    <li>Created codebase compiling our model to ONNX, TensorRT, and Inferentia formats and ran associated benchmarking.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Research Engineer @ Amazon Web Services (AWS HPC)</div>
+                    <div class="cv-item-meta">Mar 2020 – May 2021 | Seattle, WA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Created automated performance regression testing system for AWS HPC infrastructure.</li>
+                    <li>Benchmarked prototype EC2 instances to identify optimal hardware configurations for future HPC endpoints.</li>
+                </ul>
+            </div>
+            
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Research Engineer, ASR @ Amazon Alexa</div>
+                    <div class="cv-item-meta">Mar 2018 – Mar 2020 | Seattle, WA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Created a new team to maintain an in-house deep learning framework and address organizational needs.</li>
+                    <li>Optimized distributed programming workflows using C++, Python, CUDA, TensorFlow, and MxNet.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Software Development Engineer, Mobile Hub @ Amazon Web Services</div>
+                    <div class="cv-item-meta">Aug 2017 – Mar 2018 | Seattle, WA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Built Java-based backend services and data collection pipelines for customer usage analytics.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Doctoral Research Assistant @ University of Colorado, Lighthouse Project</div>
+                    <div class="cv-item-meta">Aug 2014 – Aug 2017 | Boulder, CO</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Utilized runtime performance data from supercomputers to train ML algorithms that predict optimal iterative linear solvers (C++, Trilinos, Python).</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Computation Intern @ Lawrence Livermore National Laboratory</div>
+                    <div class="cv-item-meta">Summers 2014, 2015 | Livermore, CA</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Optimized BLAST hydrodynamics code for future architectures and developed benchmarking suites for high-performance linear algebra libraries using HPCToolkit.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Software Developer/Researcher @ TerraSpark Geosciences</div>
+                    <div class="cv-item-meta">Aug 2011 – Jan 2014 | Boulder, CO</div>
+                </div>
+                <ul class="cv-list">
+                    <li>Implemented GPU-based seismic interpretation solutions using OpenCL, reducing processing time from hours to seconds compared to original CPU code.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        
+        <section class="cv-section">
+            <h2 class="cv-heading">Skills</h2>
+            <ul class="cv-list">
+                <li><strong>Languages:</strong> Python, C++</li>
+                <li><strong>Libraries & Frameworks:</strong> JAX, Pallas, CUDA, MPI, OpenMP, OpenCL</li>
+                <li><strong>Tools:</strong> XProf, DDT, ARM MAP, Intel Vtune, HPC Toolkit</li>
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <h2 class="cv-heading">Patents & Selected Publications</h2>
+            <ul class="cv-list">
+                <li>US-12093669-B1: Massively parallel compilation of application code (Issued 2024-09-17)</li>
+                <li>Publication: E. Jessup, P. Motter, et al., "Performance-Based Numerical Solver Selection in the Lighthouse Framework," SIAM Journal on Scientific Computing, 2016.</li>
+                <li>Publication: K. H. Koh... P. Motter, "Will it stick? exploring the sustainability of computational thinking education," SIGCSE 2013.</li>
+            </ul>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Pate Motter.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
