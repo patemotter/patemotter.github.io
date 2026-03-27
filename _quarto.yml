@@ -1,0 +1,18 @@
+project:
+  type: default
+
+execute:
+  freeze: true   # use existing notebook outputs, don't re-run cells
+  enabled: false
+
+format:
+  html:
+    theme: darkly
+    css: css/posts.css
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    highlight-style: github-dark
+    code-fold: true
+    embed-resources: false
+    link-external-newwindow: true

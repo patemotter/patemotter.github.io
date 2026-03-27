@@ -1,0 +1,318 @@
+/*
+ * Quarto post theme overrides — matches patemotter.com dark aesthetic
+ */
+
+/* ---- Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---- Design tokens (mirror styles.css) ---- */
+:root {
+    --pm-bg:          #0d1117;
+    --pm-surface:     #161b22;
+    --pm-border:      #30363d;
+    --pm-text:        #c9d1d9;
+    --pm-muted:       #8b949e;
+    --pm-accent:      #58a6ff;
+    --pm-accent-h:    #79c0ff;
+    --pm-font-sans:   'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --pm-font-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+/* ---- Base ---- */
+body {
+    background-color: var(--pm-bg) !important;
+    color: var(--pm-text) !important;
+    font-family: var(--pm-font-sans) !important;
+    font-size: 0.95rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Layout: full-width content, sidebar as overlay ---- */
+/* Override Quarto's grid so content takes full width */
+.page-columns {
+    display: block !important;
+}
+#quarto-document-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Sidebar: fixed overlay, hidden by default */
+#quarto-margin-sidebar {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: min(280px, 85vw) !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    background: #161b22 !important;
+    border-left: 1px solid #30363d !important;
+    padding: 4rem 1.5rem 2rem !important;
+    z-index: 499;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    grid-area: unset !important;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.4) !important;
+}
+#quarto-margin-sidebar.toc-open {
+    transform: translateX(0);
+}
+
+/* ---- Back-to-site banner ---- */
+.pm-site-nav {
+    background: var(--pm-surface);
+    border-bottom: 1px solid var(--pm-border);
+    padding: 0.6rem 1.5rem;
+    font-family: var(--pm-font-mono);
+    font-size: 0.85rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.pm-site-nav a { color: var(--pm-accent) !important; text-decoration: none !important; }
+.pm-site-nav a:hover { color: var(--pm-accent-h) !important; }
+.pm-site-nav-sep { color: var(--pm-border); }
+
+/* ---- Links ---- */
+a, a:visited {
+    color: var(--pm-accent) !important;
+    text-decoration: none;
+}
+a:hover {
+    color: var(--pm-accent-h) !important;
+    text-decoration: underline;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4 {
+    font-family: var(--pm-font-mono) !important;
+    color: var(--pm-text) !important;
+    font-weight: 600;
+}
+h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+h2 {
+    font-size: 1.35rem;
+    border-bottom: 1px solid var(--pm-border);
+    padding-bottom: 0.4rem;
+    margin-top: 2.5rem;
+}
+h2::before { content: "## "; color: var(--pm-border); }
+h3 { font-size: 1.1rem; margin-top: 1.75rem; }
+h3::before { content: "### "; color: var(--pm-border); font-size: 0.9rem; }
+
+/* ---- Post title / metadata ---- */
+.quarto-title { margin-bottom: 0.5rem; }
+.quarto-title-meta {
+    font-family: var(--pm-font-mono);
+    font-size: 0.85rem;
+    color: var(--pm-muted) !important;
+    border-bottom: 1px solid var(--pm-border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+.quarto-title-meta-heading { color: var(--pm-muted) !important; }
+.quarto-title-meta-contents { color: var(--pm-muted) !important; }
+
+/* ---- TOC ---- */
+
+nav#TOC {
+    display: block !important;
+    font-family: var(--pm-font-mono);
+    font-size: 0.8rem;
+}
+
+/* Show all TOC items expanded at all times */
+nav#TOC ul { display: block !important; }
+
+nav#TOC .toc-title {
+    color: var(--pm-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+nav#TOC a {
+    color: var(--pm-muted) !important;
+    display: block;
+    padding: 0.2rem 0;
+    text-decoration: none !important;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+}
+nav#TOC a:hover {
+    color: var(--pm-text) !important;
+    border-left-color: var(--pm-border);
+}
+nav#TOC a.active {
+    color: var(--pm-accent) !important;
+    border-left-color: var(--pm-accent);
+}
+nav#TOC ul ul a {
+    padding-left: 1rem;
+    font-size: 0.75rem;
+    color: #6e7681 !important;
+}
+nav#TOC ul ul a:hover,
+nav#TOC ul ul a.active {
+    color: var(--pm-accent) !important;
+}
+
+/* Toggle tab — always visible on right edge */
+#toc-toggle {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 500;
+    background: var(--pm-surface);
+    border: 1px solid var(--pm-border);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    color: var(--pm-muted);
+    font-family: var(--pm-font-mono);
+    font-size: 0.7rem;
+    writing-mode: vertical-rl;
+    padding: 0.75rem 0.4rem;
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: 0.05em;
+    transition: color 0.15s, border-color 0.15s;
+}
+#toc-toggle:hover {
+    color: var(--pm-accent);
+    border-color: var(--pm-accent);
+}
+
+/* Backdrop behind slide-in panel */
+#toc-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 498;
+}
+#toc-backdrop.toc-backdrop-active {
+    display: block;
+}
+
+/* ---- Code blocks ---- */
+pre, code {
+    font-family: var(--pm-font-mono) !important;
+    font-size: 0.875rem;
+}
+pre.sourceCode, div.sourceCode {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    border-radius: 6px;
+    padding: 1rem;
+}
+code:not(.sourceCode) {
+    background: var(--pm-surface);
+    border: 1px solid var(--pm-border);
+    border-radius: 3px;
+    padding: 0.1em 0.4em;
+    color: var(--pm-accent);
+}
+
+/* ---- Notebook cell output ---- */
+.cell-output, .cell-output-display {
+    background: var(--pm-bg) !important;
+    border-left: 3px solid var(--pm-border);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+.cell-output-stdout pre {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    border-radius: 6px;
+    color: var(--pm-text);
+    padding: 0.75rem 1rem;
+}
+
+/* ---- Tables ---- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+}
+th {
+    background: var(--pm-surface);
+    color: var(--pm-text);
+    border: 1px solid var(--pm-border);
+    padding: 0.6rem 0.75rem;
+    font-family: var(--pm-font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+td {
+    border: 1px solid var(--pm-border);
+    padding: 0.5rem 0.75rem;
+    color: var(--pm-muted);
+}
+tr:hover td { background: var(--pm-surface); }
+
+/* ---- Blockquotes (callouts / notes) ---- */
+blockquote {
+    border-left: 3px solid var(--pm-accent);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--pm-muted);
+}
+
+/* ---- Quarto callout boxes ---- */
+.callout {
+    background: var(--pm-surface) !important;
+    border-color: var(--pm-border) !important;
+    border-radius: 6px;
+}
+.callout-title { color: var(--pm-text) !important; }
+.callout-body { color: var(--pm-muted) !important; }
+
+/* ---- Figures & images ---- */
+figure { margin: 2rem 0; }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.cell-output-display img {
+    max-height: 650px;
+    width: auto;
+}
+figcaption {
+    font-size: 0.82rem;
+    color: var(--pm-muted);
+    font-family: var(--pm-font-mono);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* ---- Footer ---- */
+.nav-footer {
+    border-top: 1px solid var(--pm-border) !important;
+    background: var(--pm-bg) !important;
+    color: var(--pm-muted) !important;
+    font-size: 0.82rem;
+    font-family: var(--pm-font-mono);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--pm-bg); }
+::-webkit-scrollbar-thumb { background: var(--pm-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--pm-muted); }
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    h1 { font-size: 1.6rem; }
+    body::before { display: none; }
+}

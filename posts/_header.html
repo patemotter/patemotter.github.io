@@ -1,0 +1,43 @@
+<div class="pm-site-nav">
+    <a href="/writing.html">← Writing</a>
+    <span class="pm-site-nav-sep">/</span>
+    <a href="/">patemotter.com</a>
+</div>
+
+<button id="toc-toggle" aria-label="Toggle outline">Outline</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Hide the in-notebook TOC section (redundant with sidebar)
+    const headings = document.querySelectorAll('h2');
+    for (const h of headings) {
+        if (h.textContent.trim() === 'Table of Contents') {
+            const section = h.closest('.level2, section') || h.parentElement;
+            if (section) section.style.display = 'none';
+            break;
+        }
+    }
+
+    // Slide-in TOC toggle
+    const toggle = document.getElementById('toc-toggle');
+    const sidebar = document.getElementById('quarto-margin-sidebar');
+    if (!toggle || !sidebar) return;
+
+    // Force styles that Quarto's bootstrap theme overrides
+    sidebar.style.setProperty('background-color', '#161b22', 'important');
+    sidebar.style.setProperty('box-shadow', '-4px 0 20px rgba(0,0,0,0.5)', 'important');
+    sidebar.style.setProperty('z-index', '499', 'important');
+
+    toggle.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('toc-open');
+        toggle.textContent = isOpen ? '✕' : 'Outline';
+    });
+
+    sidebar.addEventListener('click', e => {
+        if (e.target.tagName === 'A') {
+            sidebar.classList.remove('toc-open');
+            toggle.textContent = 'Outline';
+        }
+    });
+});
+</script>

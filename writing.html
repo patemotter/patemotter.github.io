@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pate Motter | Writing</title>
+    <meta name="description" content="Technical write-ups on LLM inference, TPU performance engineering, and high-performance computing.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">patemotter</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Work</a>
+                <a href="index.html#resources" class="nav-link">Resources</a>
+                <a href="writing.html" class="nav-link highlight-link">Writing</a>
+                <a href="cv.html" class="nav-link highlight-link">CV</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" style="padding-bottom: 0;">
+            <h1 class="hero-title"><span class="prompt">></span> Writing</h1>
+            <p class="hero-text">
+                Long-form technical write-ups on LLM inference, TPU performance engineering, and high-performance computing.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="projects">
+            <div class="projects-list" id="posts-list">
+
+                <article class="project-item">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <a href="posts/roofline-analysis/index.html">Roofline Analysis on TPUs</a>
+                        </h3>
+                        <span class="project-role">2025</span>
+                    </div>
+                    <p class="project-description">
+                        A practical guide to roofline analysis for LLM kernels on TPU hardware. Covers arithmetic intensity, compute vs. memory bottlenecks, common misconceptions, and what rooflines can't tell you — with worked examples across v5p, v6e, and v7x.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tech-tag">JAX</span>
+                        <span class="tech-tag">TPU</span>
+                        <span class="tech-tag">Performance</span>
+                        <span class="tech-tag">HPC</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Pate Motter.</p>
+            <div class="social-links">
+                <a href="https://github.com/patemotter" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/patemotter" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
