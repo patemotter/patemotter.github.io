@@ -234,6 +234,7 @@ code:not(.sourceCode) {
     border-radius: 6px;
     color: var(--pm-text);
     padding: 0.75rem 1rem;
+    overflow-x: auto;
 }
 
 /* ---- Tables ---- */
